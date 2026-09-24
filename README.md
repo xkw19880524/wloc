@@ -10,7 +10,7 @@
 >
 > 实测（beta 8）确认限制发生在 **TLS 证书校验层**：`locationd` 仍然正常走系统代理，请求确实到得了中间人，但它会拒绝任何非 Apple CA 签发的证书 —— 即使该 CA 已在「证书信任设置」里打开完全信任（同一台设备、同一张 CA 拦截其他域名是成功的）。
 >
-> 由于校验发生在设备内部的 `locationd` 进程中，**改用软路由 / 网关侧透明代理 / 换其他 MITM 工具同样无效** —— 这些方案改变的只是流量路径，而问题出在路径终点。完整测试数据见 [#113](https://github.com/1115965515/wloc/issues/113)。
+> 由于校验发生在设备内部的 `locationd` 进程中，**改用软路由 / 网关侧透明代理 / 换其他 MITM 工具同样无效** —— 这些方案改变的只是流量路径，而问题出在路径终点。完整测试数据见 [#113](https://github.com/xkw19880524/wloc/issues/113)。
 >
 > 目前只能停留在受影响版本之前的系统。
 
@@ -19,19 +19,19 @@
 ## 订阅地址
 
 **Surge:**
-https://raw.githubusercontent.com/1115965515/wloc/refs/heads/main/modules/wloc.sgmodule
+https://raw.githubusercontent.com/xkw19880524/wloc/refs/heads/main/modules/wloc.sgmodule
 
 **Quantumult X:**
-https://raw.githubusercontent.com/1115965515/wloc/refs/heads/main/modules/wloc.conf
+https://raw.githubusercontent.com/xkw19880524/wloc/refs/heads/main/modules/wloc.conf
 
 **Loon:**
-https://raw.githubusercontent.com/1115965515/wloc/refs/heads/main/modules/wloc.lpx
+https://raw.githubusercontent.com/xkw19880524/wloc/refs/heads/main/modules/wloc.lpx
 
 **Stash:**
-https://raw.githubusercontent.com/1115965515/wloc/refs/heads/main/modules/wloc.stoverride
+https://raw.githubusercontent.com/xkw19880524/wloc/refs/heads/main/modules/wloc.stoverride
 
 **Shadowrocket(小火箭):**
-https://raw.githubusercontent.com/1115965515/wloc/refs/heads/main/modules/wloc.module
+https://raw.githubusercontent.com/xkw19880524/wloc/refs/heads/main/modules/wloc.module
 
 > Egern 可直接使用 Surge 模块
 > Stash 请直接订阅上面的 `.stoverride`，无需用 Script Hub 转换
@@ -225,7 +225,7 @@ cd worker && npm install && npm test
 
 **一键部署（Workers）：**
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/1115965515/wloc/tree/main/worker)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/xkw19880524/wloc/tree/main/worker)
 
 > 一键部署仅支持 Workers 模式，点击按钮后按提示授权即可完成部署。
 
@@ -233,7 +233,7 @@ cd worker && npm install && npm test
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/1115965515/wloc.git
+git clone https://github.com/xkw19880524/wloc.git
 cd wloc/worker
 
 # 2. 安装依赖
@@ -256,7 +256,7 @@ npm run deploy
 Pages 部署不支持一键按钮，需要手动执行：
 
 ```bash
-git clone https://github.com/1115965515/wloc.git
+git clone https://github.com/xkw19880524/wloc.git
 cd wloc/worker
 npm install
 npm run pages:deploy
@@ -293,11 +293,11 @@ Pages 和 Workers 功能完全一致，按需选择即可。
 
 ### 贡献者
 
-- [@YmlyZA](https://github.com/YmlyZA) - 百度地图支持、港澳台边界处理、GCJ 换算优化、回归测试覆盖 ([#83](https://github.com/1115965515/wloc/pull/83))
-- [@YeTianXingShi](https://github.com/YeTianXingShi) - randomRadius 随机坐标扰动功能原始实现 ([#70](https://github.com/1115965515/wloc/pull/70))
-- [@SajoLuo](https://github.com/SajoLuo) - Stash 响应格式修复 ([#66](https://github.com/1115965515/wloc/pull/66))
-- [@SkywardLab](https://github.com/SkywardLab) - 扩展 WLOC 备用域名拦截 ([#90](https://github.com/1115965515/wloc/pull/90))
-- [@beiming0000](https://github.com/beiming0000) - 逗号小数格式坐标丢失问题报告 ([#96](https://github.com/1115965515/wloc/issues/96))
+- [@YmlyZA](https://github.com/YmlyZA) - 百度地图支持、港澳台边界处理、GCJ 换算优化、回归测试覆盖 ([#83](https://github.com/xkw19880524/wloc/pull/83))
+- [@YeTianXingShi](https://github.com/YeTianXingShi) - randomRadius 随机坐标扰动功能原始实现 ([#70](https://github.com/xkw19880524/wloc/pull/70))
+- [@SajoLuo](https://github.com/SajoLuo) - Stash 响应格式修复 ([#66](https://github.com/xkw19880524/wloc/pull/66))
+- [@SkywardLab](https://github.com/SkywardLab) - 扩展 WLOC 备用域名拦截 ([#90](https://github.com/xkw19880524/wloc/pull/90))
+- [@beiming0000](https://github.com/beiming0000) - 逗号小数格式坐标丢失问题报告 ([#96](https://github.com/xkw19880524/wloc/issues/96))
 
 ---
 
